@@ -34,10 +34,11 @@ exports.findMany = async (bookObj) => {
     }
 }
 
-// exports.deleteBook = async (bookObj) => {
-//     try {
-//         await Book.deleteOne({title: args.title})
-//     } catch (error) {
-//         console.log(error)
-//     }
-// }
+exports.deleteBook = async (bookObj) => {
+    try {
+        await Book.deleteOne({title: bookObj})
+        console.log(`You have deleted: ${bookObj}`)
+    } catch (error) {
+        console.log(error)
+    }
+}

@@ -11,7 +11,7 @@ const app = async (args) => {
             listBooks();
             break;
         case "delete":
-            deleteBook({title: args.title});
+            deleteBook(process.argv[3]);
             break;
         case "list one":
             findOne(process.argv[3]);
