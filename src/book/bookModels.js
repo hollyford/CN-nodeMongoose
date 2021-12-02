@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const internal = require("stream");
 
 const bookSchema = new mongoose.Schema({
     author: {
