@@ -1,6 +1,6 @@
 require("./db/connection")
 const yargs = require("yargs")
-const { addBook, listBooks, deleteBook, findOne, findMany } = require("./book/bookMethods")
+const { addBook, listBooks, deleteBook, findOne, findMany, amendBook } = require("./book/bookMethods")
 
 const app = async (args) => {
     switch (process.argv[2]) {
@@ -18,6 +18,9 @@ const app = async (args) => {
             break;
         case "find by author":
             findMany(process.argv[3]);
+            break;
+        case "amend":
+            amendBook(process.argv[3], { author: args.author, title: args.title });
             break;
         default:
             console.log("Incorrect command");

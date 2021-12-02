@@ -42,3 +42,12 @@ exports.deleteBook = async (bookObj) => {
         console.log(error)
     }
 }
+// update one by title:
+exports.amendBook = async (bookObj) => {
+    try {
+        await Book.findOneAndUpdate({title: bookObj})
+        console.log(`Successfully amended ${bookObj}`)
+    } catch (error) {
+        console.log(error)
+    }
+}
