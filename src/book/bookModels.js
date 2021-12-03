@@ -15,7 +15,7 @@ const bookSchema = new mongoose.Schema({
     rating: {
         type: Number,
     }
-})
+});
 
 const Book = mongoose.model("Book", bookSchema);
 
