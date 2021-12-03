@@ -20,7 +20,7 @@ const app = async (args) => {
             findMany(process.argv[3]);
             break;
         case "amend":
-            amendBook(process.argv[3], { author: args.author, title: args.title });
+            amendBook({ _id: process.argv[3] }, { title: args.title, author: args.author, genre: args.genre, rating: args.rating });
             break;
         default:
             console.log("Incorrect command");
