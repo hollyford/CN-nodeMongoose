@@ -32,3 +32,13 @@ exports.deletePublisher = async (pubObj) => {
         console.log(error)
     }
 }
+// Update publisher by ID
+exports.amendPublisher = async (pubId, pubObj) => {
+    try {
+        await Publisher.findByIdAndUpdate(pubId, pubObj)
+        console.log(`Successfully amended`)
+        mongoose.connection.close();
+    } catch (error) {
+        console.log(error)
+    }
+}
