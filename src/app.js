@@ -2,7 +2,7 @@ require("./db/connection")
 const yargs = require("yargs")
 const { addBook, listBooks, deleteBook, findOne, findMany, amendBook, updateAll, addToAll } = require("./book/bookMethods")
 
-const { addPublisher, listPublishers } = require("./publisher/publisherMethods")
+const { addPublisher, listPublishers, deletePublisher } = require("./publisher/publisherMethods")
 
 const app = async (args) => {
     switch (process.argv[2]) {
@@ -43,6 +43,9 @@ const app2 = async (args) => {
             break;
         case "list pub":
             listPublishers();
+            break;
+        case "delete pub":
+            deletePublisher(process.argv[3]);
             break;
         default:
             console.log("Incorrect command");

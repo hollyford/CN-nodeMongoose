@@ -12,7 +12,7 @@ exports.addPublisher = async (pubObj) => {
         console.log(error)
     };
 }
-
+// List publisher
 exports.listPublishers = async () => {
     try {
         console.log(await Publisher.find({}))
@@ -22,13 +22,13 @@ exports.listPublishers = async () => {
     };
 };
 
-
-    exports.listBooks = async () => {
-        try {
-            console.log(await Book.find({}));
-            mongoose.connection.close();
-        } catch (error) {
-            console.log(error)
-        }
+// Delete publisher
+exports.deletePublisher = async (pubObj) => {
+    try {
+        await Publisher.deleteOne({name: pubObj})
+        console.log(`You have deleted: ${pubObj}`)
+        mongoose.connection.close();
+    } catch (error) {
+        console.log(error)
     }
-
+}
